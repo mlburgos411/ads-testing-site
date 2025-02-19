@@ -2,17 +2,42 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <!-- Reddit Pixel -->
     <script>
         !function (w, d) { if (!w.rdt) { var p = w.rdt = function () { p.sendEvent ? p.sendEvent.apply(p, arguments) : p.callQueue.push(arguments) }; p.callQueue = []; var t = d.createElement("script"); t.src = "https://www.redditstatic.com/ads/pixel.js", t.async = !0; var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(t, s) } }(window, document); rdt('init', 'a2_ghq274yx0fha'); rdt('track', 'PageVisit');
     </script>
     <!-- DO NOT MODIFY UNLESS TO REPLACE A USER IDENTIFIER -->
     <!-- End Reddit Pixel -->
+    <script>
+        // This function intercepts the form submission
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevents the default form submission
+
+            // Trigger your Reddit Ads Pixel event here
+            console.log("Form submitted. Trigger Reddit Ads Pixel event.");
+
+            // Optionally, simulate a pixel call (replace with actual pixel code if needed)
+            // redditPixel.fire('conversion', { value: 1 });
+
+            // Optionally, provide user feedback or reset the form
+            document.getElementById('dummyForm').reset();
+        }
+    </script>
     <title> Big Bully Problems</title>
 </head>
 
 <body>
     <p>Aslan's first Github Pages page!</p>
-</body>
+
+    <body>
+        <h1>Test Form</h1>
+        <form id="dummyForm" action="#" method="post" onsubmit="handleSubmit(event)">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </body>
 
 </html>
